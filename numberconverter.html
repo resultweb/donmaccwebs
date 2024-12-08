@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Number System Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(numberconverter.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: deepskyblue;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: lightskyblue;
+            text-shadow: 1px 1px 25px darkblue, 0 0 10px blue, 0 0 10px blue;
+        }
+
+        .input-section, .definitions {
+            margin-top: 20px;
+        }
+
+        .input-section input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .results ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .results li {
+            padding: 8px 0;
+            font-size: 18px;
+        }
+
+        .results strong {
+            color: lime;
+        }
+
+        .definitions h2 {
+            margin-bottom: 10px;
+        }
+
+        .definitions p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 10px 0;
+            background: rgba(38, 19, 237, 0.566);
+            color: white;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: deepskyblue;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .back-link:hover {
+            background-color: rgba(38, 19, 237, 0.566);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">Back</a>
+        <h1>Number System Converter</h1>
+        <div class="input-section">
+            <h2>Enter a Decimal Number</h2>
+            <input type="number" id="decimalInput" placeholder="Type a decimal number here">
+        </div>
+
+        <div class="results">
+            <h2>Conversions</h2>
+            <ul>
+                <li>Binary: <strong id="binaryResult">-</strong></li>
+                <li>Octal: <strong id="octalResult">-</strong></li>
+                <li>Hexadecimal: <strong id="hexResult">-</strong></li>
+            </ul>
+        </div>
+
+        <div class="definitions">
+            <h2>Number System Definitions</h2>
+            <p><strong>Binary:</strong> A number system that uses only two digits, 0 and 1. It's the foundation of computer systems.</p>
+            <p><strong>Octal:</strong> A base-8 number system that uses digits from 0 to 7. It is often used in digital systems.</p>
+            <p><strong>Hexadecimal:</strong> A base-16 number system that uses digits 0–9 and letters A–F. Commonly used in programming.</p>
+            <p><strong>Decimal:</strong> The standard base-10 number system we use every day, consisting of digits 0–9.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Number System Converter. All rights reserved.
+    </footer>
+
+    <script>
+        const decimalInput = document.getElementById('decimalInput');
+        const binaryResult = document.getElementById('binaryResult');
+        const octalResult = document.getElementById('octalResult');
+        const hexResult = document.getElementById('hexResult');
+
+        decimalInput.addEventListener('input', () => {
+            const decimalValue = parseInt(decimalInput.value);
+
+            if (!isNaN(decimalValue)) {
+                binaryResult.textContent = decimalValue.toString(2);
+                octalResult.textContent = decimalValue.toString(8);
+                hexResult.textContent = decimalValue.toString(16).toUpperCase();
+            } else {
+                binaryResult.textContent = '-';
+                octalResult.textContent = '-';
+                hexResult.textContent = '-';
+            }
+        });
+    </script>
+</body>
+</html>

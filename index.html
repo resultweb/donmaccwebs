@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <title>The Developer of Don</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            min-height: 100vh;
+            background-image: url(index.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1 {
+            margin: 20px 0;
+            color: #024e8d;
+            font-size: 36px;
+            text-align: center;
+            text-shadow: 1px 1px 25px white, 0 0 10px dodgerblue, 0 0 10px deepskyblue;
+        }
+
+        .button-container {
+            margin-top: auto; 
+            margin-bottom: auto; 
+            text-align: center;
+        }
+
+        .hover-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            background-color: rgb(7, 78, 165);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hover-button:hover {
+            background-color: dodgerblue;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hover-button:first-of-type {
+            background-color: deepskyblue;
+        }
+
+        .hover-button:first-of-type:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose an Box</h1>
+    <div class="button-container">
+        <a href="numberconverter.html" class="hover-button">Number System Converter</a>
+        <a href="numbersystemtable.html" class="hover-button">Number System Conversion Table</a>
+    </div>
+</body>
+</html>
